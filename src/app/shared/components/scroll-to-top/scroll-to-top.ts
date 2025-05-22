@@ -29,19 +29,22 @@ export class ScrollToTop {
   private el = inject(ElementRef);
   private document: Document = inject(DOCUMENT);
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollOffset = this.el.nativeElement.scrollTop || this.document.documentElement.scrollTop || this.document.body.scrollTop;
-    this.windowScrolled = scrollOffset > 100;
-  }
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.windowScrolled = window.pageYOffset > 100;
+}
 
-  scrollToTop() {
-    (function smoothscroll() {
-      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 8));
-      }
-    })();
-  }
+scrollToTop(): void {
+  const scrollStep = () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 4) { // stop when close enough to top
+      window.scrollTo(0, currentScroll - currentScroll / 8);
+      window.requestAnimationFrame(scrollStep);
+    } else {
+      window.scrollTo(0, 0); // force final alignment
+    }
+  };
+
+  scrollStep();
+}
 }
