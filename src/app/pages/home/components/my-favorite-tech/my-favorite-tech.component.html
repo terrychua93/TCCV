@@ -1,0 +1,10 @@
+<section class="mt-16" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+    <p class="mb-8 text-4xl text-gray-900 dark:text-blue-300 inline-block font-semibold">My Favorite Techs</p>
+    <div class="flex flex-wrap h-1/2 py-6 justify-center">
+      @for (t of myFavoriteTechData(); track t.name) {
+        <a [href]="t.url" [attr.aria-label]="t.name" target="_blank" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" [attr.data-aos-duration]="($index * 20)">
+          <devicon [name]="t.name" [key]="$index" cssClass="w-20 m-5"/>
+        </a>
+      }
+    </div>
+</section>

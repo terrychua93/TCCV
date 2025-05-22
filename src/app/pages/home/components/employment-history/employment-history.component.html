@@ -1,0 +1,36 @@
+<section class="mt-16">
+  <p class="mb-8 text-4xl text-gray-900 dark:text-blue-300 inline-block font-semibold">Employment History</p>
+
+  <p-timeline 
+    [value]="employmentHistory"
+    align="alternate"
+    layout="vertical"
+    class="w-full">
+    <ng-template pTemplate="marker" let-job let-i="index">
+        <span class="flex w-16 h-16 items-center justify-center rounded-full shadow-sm text-white dark:text-slate-700 bg-slate-700 dark:bg-white" [ngClass]="job.company === 'BIDOT TECH PTE LTD' ? 'animate-pulse !text-[#FFAC00]' : 'default-marker'">
+            <i [class]="job.icon + ' text-xl'"></i>
+        </span>
+    </ng-template>
+    <ng-template pTemplate="content" let-job>
+        <p-card class="w-full md:max-w-2xl block !bg-gray-900 text-white dark:!bg-white dark:text-black hover:!border-[#007bfe14] dark:hover:!border-[#d5744714] transition-all duration-200 cursor-pointer rounded-3xl"
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-duration="600"
+                data-aos-easing="ease-in-out">
+            <div class="flex flex-col gap-3 text-left">
+                <div class="flex items-center space-x-2 gap-4">
+                    <img class="rounded-[10%]" src={{job.imageUrl}} width="80" height="80"/>
+                    <div class="flex flex-col text-align-left">
+                        <span class="text-gray-300 dark:text-gray-600 font-semibold text-2xl">{{job.position}}</span>
+                        <a href={{job.website}} class="text-gray-300 dark:text-black text-lg font-sans hover:underline hover:text-blue-400">{{job.company}}</a>
+                    </div>
+                </div>
+                <span class="text-gray-300 dark:text-gray-600 text-lg font-sans">{{job.description}}</span>
+                <p-chip styleClass="text-[#007bff] bg-gray-300  dark:bg-[#007bfe14]" label="{{job.period}}" />
+
+            </div>
+        </p-card>
+    </ng-template>
+
+  </p-timeline>
+</section>

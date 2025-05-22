@@ -1,0 +1,58 @@
+<section class="mt-16 relative px-4 sm:px-8">
+    <h2 class="mb-12 text-4xl font-bold text-center text-gray-900 dark:text-blue-300">
+        Projects
+    </h2>
+    <div class="grid grid-cols-1 gap-8 max-w-screen-xl mx-auto">
+        @for (post of projectData(); track $index) {
+        <p-card class="overflow-hidden rounded-2xl shadow-lg"
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-duration="600"
+            data-aos-easing="ease-in-out">
+            <ng-template pTemplate="header">
+                <div class="relative h-48 w-full bg-cover bg-center flex flex-col justify-center items-center"
+                    [ngClass]="getGradient($index)">
+                    <div class="flex items-center mb-5">
+                        <img class="rounded-[10%] ml-auto w-20 h-20" src={{post.companyLogo}} width="50" height="50" />
+                    </div>
+                    <span class="font-bold text-xl">{{post.comapanyName}}</span>
+                    <span class="font-bold text-xl">({{post.position}})</span>
+                    
+                </div>
+
+            </ng-template>
+
+            <div class=" p-10 !bg-gray-900 dark:!bg-white">
+                <h2 class="text-xl font-semibold text-blue-500 dark:text-blue-500 mb-2">
+                    {{ post.title }}
+                </h2>
+                <section>
+                    <h5 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Overview:</h5>
+                    <p class="text-base leading-relaxed text-white dark:text-black mb-4">
+                        {{ post.description }}
+                    </p>
+                </section>
+                <section>
+                    <h5 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tools & Technologies:</h5>
+                    <ul role="list" class="list-disc pl-5 space-y-3 text-white dark:text-black">
+                        @for (res of post.responsibilities; track $index) {
+                        <li>
+                            <span class="font-semibold">{{ res.title }}:</span> {{ res.description }}
+                        </li>
+                        }
+                    </ul>
+                </section>
+
+                <section class="mt-5">
+                    <h5 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tools & Technologies:</h5>
+                    <footer class="mt-4 flex flex-row gap-2">
+                        @for (t of post.tools; track $index) {
+                        <devicon [name]="t.name" [key]="$index" cssClass="w-10 m-2" />
+                        }
+                    </footer>
+                </section>
+            </div>
+        </p-card>
+        }
+    </div>
+</section>

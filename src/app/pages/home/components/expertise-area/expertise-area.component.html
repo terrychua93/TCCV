@@ -1,0 +1,20 @@
+<section class="mt-16">
+    <p class="mb-8 text-4xl text-gray-900 dark:text-blue-300 inline-block font-semibold">Expertise Area</p>
+    <div class="max-w-screen-xl grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start group">
+        @for (s of services(); track $index) {
+        <p-card
+            class="!bg-gray-900 text-white dark:!bg-white dark:text-black hover:!bg-gray-800 dark:hover:!bg-slate-300 transition-all duration-200 cursor-pointer"
+            data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine"
+            [attr.data-aos-duration]="($index * 200 + 400)">
+
+            <div class="flex flex-col gap-3 text-center h-[150px]">
+                <icon class="text-gray-300 dark:text-black mx-auto fill-slate-800" [path]="s.icon" [size]="50"
+                    [color]="'#76a8f9'" />
+                <span class="text-gray-300 dark:text-black font-semibold">{{ s.name }}</span>
+                <span class="text-gray-300 dark:text-black">{{ s.description }}</span>
+            </div>
+        </p-card>
+        }
+    </div>
+
+</section>

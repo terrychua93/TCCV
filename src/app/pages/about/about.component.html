@@ -1,0 +1,94 @@
+<section class="mt-8 relative">
+
+  <p class="mb-8 text-4xl text-gray-900 dark:text-blue-300 inline-block font-semibold">About Me</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative mb-8">
+    <!-- Right Side -->
+    <div data-aos="fade-right" data-aos-delay="400">
+      <div class="pb-6">
+        <h5 class="text-blue-500 uppercase font-semibold mb-2">{{aboutme().title}}</h5>
+        <h2 class="text-5xl font-extralight text-gray-800 dark:text-white">
+          {{aboutme().position}}
+        </h2>
+      </div>
+      <div [innerHTML]="aboutme().desc"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Info Box -->
+        <div class="border-2 border-[#bab4a8] p-[20px] rounded-[10px] uppercase font-oswald font-light">
+          <div class="text-6xl font-bold text-blue-600 flex items-center justify-center sm:justify-start">
+            <i class="fal fa-long-arrow-up mr-2"></i>
+            <span>{{aboutme().projectCount}}</span>
+          </div>
+          <p class="mt-2 text-gray-700 dark:text-gray-300 text-sm">Projects Completed</p>
+        </div>
+
+        <!-- Experience Box -->
+        <div class="border-2 border-[#bab4a8] p-[20px] rounded-[10px] uppercase font-oswald font-light">
+          <div class="text-6xl font-bold text-blue-600 flex items-center justify-center sm:justify-start">
+            <i class="fal fa-long-arrow-up mr-2"></i>
+            <span>{{aboutme().experienceCount}}<sub class="text-xl">+</sub></span>
+          </div>
+          <p class="mt-2 text-gray-700 dark:text-gray-300 text-sm">Years of experience</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left Side -->
+    <div class="relative min-h-[auto]">
+      <div class="flex justify-end" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine"
+        data-aos-duration="600">
+        <img [src]="'./assets/image/motivation.jpg'" [width]="700" />
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8  mb-8">
+    @for (personal of aboutme().personalQualityAndInterest; track $index) {
+    <p-card class="overflow-hidden rounded-2xl shadow-lg" data-aos="fade-left" data-aos-offset="200"
+      data-aos-duration="600" data-aos-easing="ease-in-out">
+      <ng-template pTemplate="header">
+        <div
+          class="p-10 relative h-20 w-full bg-cover bg-center flex flex-col justify-center item-right bg-[cornflowerblue]">
+          <span class="font-bold text-3xl text-black">{{personal.title}}</span>
+        </div>
+
+      </ng-template>
+
+      <div class="p-10 !bg-gray-900 dark:!bg-white text-xl" [innerHTML]="personal.desc"></div>
+    </p-card>
+    }
+  </div>
+  
+
+  <section
+    class="mx-auto p-8 rounded-3xl bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 shadow-lg"
+    data-aos="fade-left" data-aos-offset="200" data-aos-duration="600" data-aos-easing="ease-in-out">
+    <h2
+      class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-10 border-b-4 border-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block pb-1">
+      Personal Information
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800 dark:text-gray-300">
+      <ng-container *ngFor="let info of aboutme().contactInfo">
+        <div class=" text-gray-800 dark:text-gray-300">
+          <h3 class="font-bold ">{{ info.label }}:</h3>
+          <ng-container *ngIf="info.link; else plainText">
+            <a [href]="info.link" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">
+              {{ info.value }}
+            </a>
+          </ng-container>
+          <ng-template #plainText>
+            <p [innerHTML]="info.value"></p>
+          </ng-template>
+        </div>
+      </ng-container>
+    </div>
+
+
+  </section>
+
+
+
+
+
+</section>
