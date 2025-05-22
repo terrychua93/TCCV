@@ -47,6 +47,7 @@
     "@types/node": "^16.11.7",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^3.0.0",
+    "firebase-tools": "^14.4.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
