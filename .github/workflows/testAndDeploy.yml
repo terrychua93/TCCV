@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -33,11 +33,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
-          channelId: live
+      - name: Deploy to Firebase Hosting
+        run: npx firebase-tools deploy --only hosting --token "$FIREBASE_TOKEN"
         env:
-          FIREBASE_CLI_EXPERIMENTS: "webframeworks"
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
