@@ -1,42 +1,45 @@
-name: Integration Deploy workflow
+name: Test and Deploy
 
 on:
- push:
-   branches:
-       - main
- pull_request: 
-   branches:
-        - main
- workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
- hello:
-  runs-on: ubuntu-latest
+  hello:
+    runs-on: ubuntu-latest
 
-  strategy:
-    matrix:
-      node-version: [18.x, 20.x, 22.x]
-  steps:
-   - uses: actions/checkout@v4
-   - uses: Use Node.js ${{ matrix.node-version }}
-     with:
-       node-version: ['18.x', '20.x', '22.x']
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
 
-   - name: Install dependencies And Run Tests  
-     run: npm ci
-     run: npx playwright install --with-deps
-     run: npx ts-node --loader ts-node/esm src/tests/playwright-test.ts
-     run: npx playwright test
+    steps:
+      - uses: actions/checkout@v4
 
-   - name: Build project
-     run: npm run build  # Adjust this if your build command is different
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-   - name: Deploy to Firebase
-     uses: FirebaseExtended/action-hosting-deploy@v0
-     with:
-      repoToken: "${{ secrets.GITHUB_TOKEN }}"
-      firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
-      channelId: live
-     env:
-      FIREBASE_CLI_EXPERIMENTS: "webframeworks"
+      - name: Install dependencies and run tests
+        run: |
+          npm ci
+          npx playwright install --with-deps
+          npx ts-node --loader ts-node/esm src/tests/playwright-test.ts
+          npx playwright test
 
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
+          channelId: live
+        env:
+          FIREBASE_CLI_EXPERIMENTS: "webframeworks"
