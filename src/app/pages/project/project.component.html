@@ -45,7 +45,7 @@
 
                 <section class="mt-5">
                     <h5 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tools & Technologies:</h5>
-                    <footer class="mt-4 flex flex-row gap-2">
+                    <footer class="mt-4 flex flex-row flex-wrap gap-2">
                         @for (t of post.tools; track $index) {
                         <devicon [name]="t.name" [key]="$index" cssClass="w-10 m-2" />
                         }
