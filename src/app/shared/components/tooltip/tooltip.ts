@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { TooltipDirective } from '@shared/components/tooltip/tooltip.directive';
 @Component({
   selector: 'tooltip',
   template: `
@@ -13,7 +12,7 @@ import { TooltipDirective } from '@shared/components/tooltip/tooltip.directive';
       {{ tooltip }}
     </div>
   `,
-  imports: [NgClass, TooltipDirective],
+  imports: [NgClass],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
 })
