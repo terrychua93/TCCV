@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,7 +29,7 @@ jobs:
         run: |
           npm ci
           npx playwright install --with-deps
-          npx ts-node --loader ts-node/esm src/tests/playwright-test.ts
+          npx ts-node ts-node/esm src/tests/playwright-test.ts
           npx playwright test
 
       - name: Build project
