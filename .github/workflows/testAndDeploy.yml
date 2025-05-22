@@ -28,8 +28,7 @@ jobs:
       - name: Install dependencies and run tests
         run: |
           npm ci
-          npx playwright install --with-deps
-          npx playwright test
+          npm run test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build project
         run: npm run build
