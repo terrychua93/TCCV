@@ -4,7 +4,6 @@ import { ScrollToTop } from '@shared/components/scroll-to-top/scroll-to-top';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '@layout/footer/footer.component';
 import { DOCUMENT } from '@angular/common';
-import { environment } from '@env/environment';
 
 @Component({
   selector: 'app',
@@ -22,14 +21,6 @@ export class App implements OnInit {
   ngOnInit(): void {
     this.elementRef.nativeElement.removeAttribute("ng-version");
     this.elementRef.nativeElement.removeAttribute("ng-server-context");
-
-    if(environment.production){
-      const script = this.renderer.createElement('script');
-      script.defer = true;
-      script.src = 'https://cloud.umami.is/script.js';
-      script.setAttribute('data-website-id', environment.umamiWebsiteId);
-      this.renderer.appendChild(this.document.head, script);
-    }
   }
 
 }
