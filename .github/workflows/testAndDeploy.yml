@@ -29,7 +29,6 @@ jobs:
         run: |
           npm ci
           npx playwright install --with-deps
-          npx ts-node ts-node/esm src/tests/playwright-test.ts
           npx playwright test
 
       - name: Build project
