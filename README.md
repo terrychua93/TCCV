@@ -1,34 +1,42 @@
-💼 Personal Resume Website
-A modern, responsive resume website built with Angular v19 to showcase my professional experience, skills, and projects.
+# 💼 Personal Resume Website
+A modern, responsive personal resume website built with Angular v19, leveraging standalone components for modularity and performance. The site is fully automated with CI/CD and deployed to Firebase Hosting for fast, secure, and globally distributed access.
 
-🚀 Features
-Angular v19 with Standalone Components for modular architecture and performance optimization
+---
 
-Responsive UI ensuring smooth viewing on desktop and mobile devices
+## 🛠 Tech Stack
+🅰️ Angular v19 – Modern frontend framework with standalone components
 
-CI/CD Automation for streamlined updates and deployments
+⚡ TypeScript – Strongly typed JavaScript for maintainable code
 
-Firebase Hosting for fast, secure, and globally distributed delivery
+🎨 SCSS – Custom styling for a clean, professional design
 
-🛠️ Tech Stack
-Frontend: Angular v19, TypeScript, HTML, SCSS
+🔄 GitHub Actions – CI/CD automation for seamless deployment
 
-Hosting: Firebase Hosting
+🔥 Firebase Hosting – Fast and secure global content delivery
 
-Automation: GitHub Actions for CI/CD
+---
 
-📦 Deployment
-Build the project
+## ✨ Features
+📄 Showcases my professional experience, skills, and projects
 
-bash
-Copy
-Edit
-ng build --configuration production
-Deploy to Firebase Hosting
+📱 Responsive design for mobile, tablet, and desktop
 
-bash
-Copy
-Edit
-firebase deploy
-🔗 Live Demo
-Visit My Resume Website
+⚡ Optimized performance with Angular standalone components
+
+🚀 Automated deployment via GitHub Actions to Firebase Hosting
+
+🌍 Accessible worldwide with secure HTTPS hosting
+
+---
+
+## 📷 Screenshot
+
+---
+
+## 🚀 Getting Started
+### 1. Install dependencies
+
+
+```bash
+npm install
+npx run start
