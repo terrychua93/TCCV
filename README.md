@@ -29,7 +29,8 @@ A modern, responsive personal resume website built with Angular v19, leveraging 
 
 ---
 
-## 📷 Screenshot
+## 🔗 Live Demo
+[Visit My Resume Website](https://tccv-b8467.web.app/)
 
 ---
 
