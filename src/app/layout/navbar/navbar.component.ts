@@ -36,13 +36,21 @@ export class NavbarComponent {
       this.applyDarkModeStyles();
     });
   }
+  
   private applyDarkModeStyles() {
     const darkMode = this.darkModeService.isDark();
+
+    // Root HTML
     const root = this.document.documentElement;
+    if (root) {
+      root.classList[darkMode ? 'add' : 'remove']('dark');
+    }
+
+    // Favicon
     const favicon = this.document.querySelector("link[rel*='icon']");
-    const newFaviconHref = `assets/icons/favicon-${darkMode ? 'dark' : 'light'
-      }.png`;
-    this.renderer.setAttribute(favicon, 'href', newFaviconHref);
-    root.classList[darkMode ? 'add' : 'remove']('dark');
+    if (favicon) {
+      const newFaviconHref = `assets/icons/favicon-${darkMode ? 'dark' : 'light'}.png`;
+      this.renderer.setAttribute(favicon, 'href', newFaviconHref);
+    }
   }
 }
