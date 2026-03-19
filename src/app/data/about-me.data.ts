@@ -34,19 +34,15 @@ const aboutMeData: AboutMeSchema = {
   projectCount: 5,
   experienceCount: 5,
   contactInfo: [
-    {
-      label: 'Address',
-      value: 'Block 511, Bukit Batok ST 52, 01-193 <br> (Currently residing in Singapore)'
+      {
+      label: 'WhatsApp (MY)',
+      value: '+60 1110721993',
+      link: 'https://wa.me/601110721993'
     },
     {
       label: 'WhatsApp (SG)',
       value: '+65 8805 9226',
       link: 'https://wa.me/6588059226'
-    },
-    {
-      label: 'WhatsApp (MY)',
-      value: '+60 1110721993',
-      link: 'https://wa.me/601110721993'
     },
     {
       label: 'Email',

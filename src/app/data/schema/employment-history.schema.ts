@@ -7,4 +7,5 @@ export interface EmploymentHistorySchema{
   description: string,
   position: string,
   period: string,
+  current?: boolean,
 }

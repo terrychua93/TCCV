@@ -5,3 +5,29 @@
 .flex-flow-wrap{
     flex-flow: wrap;
 }
+
+@media (max-width: 768px) {
+  /* Hide the vertical connecting line */
+  ::ng-deep .p-timeline-left::before,
+  ::ng-deep .p-timeline-right::before,
+  ::ng-deep .p-timeline-alternate::before {
+    display: none !important;
+  }
+
+  /* Optional: center the marker above the card */
+  ::ng-deep .p-timeline-event-marker {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Make content full-width and centered */
+  ::ng-deep .p-timeline-event-content {
+    margin-left: 0 !important;
+    text-align: center;
+    width: 100% !important;
+  }
+
+  ::ng-deep .p-timeline-event-separator {
+    visibility: hidden !important;
+  }
+}

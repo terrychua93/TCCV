@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Sleepy Cat",
+    "url": "https://placekitten.com/300/200",
+    "category": "Cat",
+    "description": "A sleepy cat curled up in a cozy blanket on a rainy day."
+  },
+  {
+    "id": 2,
+    "title": "Playful Puppy",
+    "url": "https://placedog.net/300/200?id=1",
+    "category": "Dog",
+    "description": "A happy puppy running through the grass in the backyard."
+  },
+  {
+    "id": 3,
+    "title": "Colorful Parrot",
+    "url": "https://loremflickr.com/300/200/parrot",
+    "category": "Bird",
+    "description": "A vibrant parrot perched on a wooden stick in a tropical forest."
+  },
+  {
+    "id": 4,
+    "title": "Grumpy Cat",
+    "url": "https://placekitten.com/301/200",
+    "category": "Cat",
+    "description": "A grumpy-looking cat staring straight into the camera."
+  },
+  {
+    "id": 5,
+    "title": "Golden Retriever",
+    "url": "https://placedog.net/301/200?id=2",
+    "category": "Dog",
+    "description": "A golden retriever sitting patiently and wagging its tail."
+  },
+  {
+    "id": 6,
+    "title": "Flying Eagle",
+    "url": "https://loremflickr.com/300/200/eagle",
+    "category": "Bird",
+    "description": "A majestic eagle soaring through the sky with wings spread wide."
+  }
+]

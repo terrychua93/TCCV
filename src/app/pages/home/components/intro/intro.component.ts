@@ -7,13 +7,14 @@ import ProfileData from '@data/profile.data'
 import { ProfileSchema } from '@data/schema/profile.schema';
 import { Icon } from '@shared/components/icon/icon';
 import { file } from '@icon/solid.icon';
+import { CapitalizePipe } from '@core/pipe/capitalize.pipe';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss'],
-  imports: [SocialLink, Button, Icon],
+  imports: [SocialLink, Button, Icon, CapitalizePipe],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true

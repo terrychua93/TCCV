@@ -1,0 +1,20 @@
+<div class="">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <select class="select" formControlName="category">
+            <option *ngFor="let category of categories" [value]="category">
+                {{ category }}
+            </option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    @for(data of photos; track $index) {
+    <div class="contiainer">
+        <app-imagecard [image]="data"></app-imagecard>
+    </div>
+    }
+
+    @for (user of userList2; track $index) {
+        <p>{{ user.name }}</p>
+    }
+</div>

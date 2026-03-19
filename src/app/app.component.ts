@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewEncapsulation, effect, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewEncapsulation, inject } from '@angular/core';
 import { NavbarComponent } from '@layout/navbar/navbar.component';
 import { ScrollToTop } from '@shared/components/scroll-to-top/scroll-to-top';
 import { RouterOutlet } from '@angular/router';

@@ -5,6 +5,17 @@ const employmentHistoryData: EmploymentHistorySchema[] = [
   {
     color: '#3C437E',
     icon: 'pi pi-star-fill',
+    imageUrl: './assets/image/pwg-enterprise.jpg',
+    company: 'PWG ENTERPRISE',
+    website: 'https://pwgent.com/',
+    description: 'A tech company building scalable web and mobile platforms, including AI chat systems and cross-platform apps.',
+    position: 'Frontend Developer',
+    period: 'JULY 2025 — JAN 2026',
+    current: true
+  },
+  {
+    color: '#9fb3f3',
+    icon: 'pi pi-arrow-up-left',
     imageUrl: './assets/image/bidot.jpg',
     company: 'BIDOT TECH PTE LTD',
     website: 'https://www.bidot.sg/',

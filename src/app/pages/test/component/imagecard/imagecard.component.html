@@ -1,0 +1,15 @@
+<div class="max-w-sm rounded-2xl overflow-hidden shadow-md bg-white">
+  <img [src]="image.url" [alt]="image.title" class="w-full h-48 object-cover" />
+
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-800">{{ image.title }}</h3>
+    <p class="text-sm text-gray-500 mt-1">{{ image.description | shorten:60 }}</p>
+
+    <button
+      (click)="onImageClick(image)"
+      class="mt-4 w-full bg-indigo-600 text-white text-sm py-2 rounded-lg hover:bg-indigo-700 transition"
+    >
+      View Details
+    </button>
+  </div>
+</div>

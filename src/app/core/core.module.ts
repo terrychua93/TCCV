@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { SafePipe } from '@core/pipe/safe.pipe';
-import { MarkdownPipe } from '@core/pipe/markdown.pipe';
+import { CapitalizePipe } from './pipe/capitalize.pipe';
 
 @NgModule({
-  declarations: [SafePipe, MarkdownPipe],
-  exports: [SafePipe, MarkdownPipe]
+  declarations: [CapitalizePipe],
+  exports: [CapitalizePipe]
 })
 export class CoreModule { }
